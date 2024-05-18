@@ -8,13 +8,14 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.Scanner;
 
 public class Main {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		ArrayList<String> lista = new ArrayList<String>();
-
+		Scanner scan = new Scanner(System.in);
 		lista.add("Perro");
 		lista.add("Gato");
 		lista.add("Juan");
@@ -25,10 +26,13 @@ public class Main {
 		lista.add("Camila");
 		lista.add("Daniel");
 		lista.add("Camila");
+		System.out.println("Porfavor indica el elemento a buscar;");
+		String busqueda = scan.nextLine();
+		scan.close();
 		String directorio = ("src/" + "directorio");
 		String fichero = (directorio + "/" + "fichero.txt");
 		crearArchivo(directorio, fichero, lista);
-		int contador = buscarTexto(fichero, "gato");
+		int contador = buscarTexto(fichero, busqueda);
 		System.out.println("cantidad de repeticiones del texto -> "+contador);
 		
 	}
