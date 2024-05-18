@@ -1,7 +1,9 @@
 package desafioEvaluadoD18;
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -69,6 +71,38 @@ public class Main {
 			e.printStackTrace();
 		}
 
+	}
+	
+	public static int buscarTexto(String fichero, String texto) {
+		File file = new File(fichero);
+		int contador = 0;
+		if(file.exists()) {
+			
+			try (FileReader fr = new FileReader(file);BufferedReader br = new BufferedReader(fr)) {
+				
+				String leerLinea = br.readLine();
+				while (leerLinea != null) {
+					
+					if(leerLinea.equalsIgnoreCase(texto)) {
+						
+						contador++;
+						
+					}
+					leerLinea = br.readLine();
+					
+				}		
+				
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+
+		}else {
+			System.out.println("El fichero ingresado no existe.");
+		}
+
+		return contador;
 	}
 	
 	
