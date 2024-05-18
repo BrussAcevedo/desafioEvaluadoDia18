@@ -14,8 +14,9 @@ public class Main {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		ArrayList<String> lista = new ArrayList<String>();
 		Scanner scan = new Scanner(System.in);
+		ArrayList<String> lista = new ArrayList<String>();
+
 		lista.add("Perro");
 		lista.add("Gato");
 		lista.add("Juan");
@@ -26,18 +27,19 @@ public class Main {
 		lista.add("Camila");
 		lista.add("Daniel");
 		lista.add("Camila");
+		
 		System.out.println("Porfavor indica el elemento a buscar;");
 		String busqueda = scan.nextLine();
 		scan.close();
+		
 		String directorio = ("src/" + "directorio");
 		String fichero = (directorio + "/" + "fichero.txt");
 		crearArchivo(directorio, fichero, lista);
 		int contador = buscarTexto(fichero, busqueda);
 		System.out.println("cantidad de repeticiones del texto -> "+contador);
-		
+
 	}
 
-	
 	public static void crearArchivo(String directorio, String fichero, ArrayList<String> lista) {
 		File dir = new File(directorio);
 
@@ -110,6 +112,5 @@ public class Main {
 
 		return contador;
 	}
-	
 	
 }
