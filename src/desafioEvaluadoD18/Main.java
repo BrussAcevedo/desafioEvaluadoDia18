@@ -27,7 +27,9 @@ public class Main {
 		lista.add("Camila");
 		String directorio = ("src/" + "directorio");
 		String fichero = (directorio + "/" + "fichero.txt");
-		
+		crearArchivo(directorio, fichero, lista);
+		int contador = buscarTexto(fichero, "gato");
+		System.out.println("cantidad de repeticiones del texto -> "+contador);
 		
 	}
 
