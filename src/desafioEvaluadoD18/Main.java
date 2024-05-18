@@ -23,6 +23,9 @@ public class Main {
 		lista.add("Camila");
 		lista.add("Daniel");
 		lista.add("Camila");
+		String directorio = ("src/" + "directorio");
+		String fichero = (directorio + "/" + "fichero.txt");
+		
 		
 	}
 
